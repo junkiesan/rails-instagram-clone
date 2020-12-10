@@ -5,6 +5,7 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],                        # required unless using use_iam_profile
   }
   config.storage  = :fog                                      # required
+  config.region  = ['eu-west-1']                                     # required
   config.permissions  = 0666                                      # required
   config.cache_dir  = "#{Rails.root}/tmp/"                                      # required
   config.fog_directory  = ENV['FOG_DIRECTORY']                                     # required
