@@ -62,7 +62,7 @@ GEM
     aliyun-sdk (0.8.0)
       nokogiri (~> 1.6)
       rest-client (~> 2.0)
-    autoprefixer-rails (10.0.3.0)
+    autoprefixer-rails (10.1.0.0)
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
@@ -91,8 +91,6 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
-    declarative (0.0.20)
-    declarative-option (0.1.0)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -105,27 +103,25 @@ GEM
     erubi (1.10.0)
     excon (0.78.1)
     execjs (2.7.0)
-    faraday (0.17.3)
-      multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (2.2.0)
+    fog (1.42.1)
       fog-aliyun (>= 0.1.0)
       fog-atmos
       fog-aws (>= 0.6.0)
       fog-brightbox (~> 0.4)
-      fog-cloudatcost (~> 0.4)
-      fog-cloudstack (~> 0.1.0)
-      fog-core (~> 2.1)
+      fog-cloudatcost (~> 0.1.0)
+      fog-core (~> 1.45)
       fog-digitalocean (>= 0.3.0)
-      fog-dnsimple (~> 2.1)
+      fog-dnsimple (~> 1.0)
       fog-dynect (~> 0.0.2)
       fog-ecloud (~> 0.1)
-      fog-google (~> 1.0)
+      fog-google (<= 0.1.0)
       fog-internet-archive
+      fog-joyent
       fog-json
       fog-local
       fog-openstack
@@ -156,9 +152,9 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (3.7.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
+    fog-aws (0.7.6)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
     fog-brightbox (0.16.1)
@@ -166,27 +162,23 @@ GEM
       fog-core
       fog-json
       mime-types
-    fog-cloudatcost (0.4.0)
-      fog-core
-      fog-json
-      ipaddress
-    fog-cloudstack (0.1.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
+    fog-cloudatcost (0.1.2)
+      fog-core (~> 1.36)
+      fog-json (~> 1.0)
       fog-xml (~> 0.1)
-    fog-core (2.2.3)
+      ipaddress (~> 0.8)
+    fog-core (1.45.0)
       builder
-      excon (~> 0.71)
+      excon (~> 0.58)
       formatador (~> 0.2)
-      mime-types
     fog-digitalocean (0.4.0)
       fog-core
       fog-json
       fog-xml
       ipaddress (>= 0.5)
-    fog-dnsimple (2.1.0)
-      fog-core (>= 1.38, < 3)
-      fog-json
+    fog-dnsimple (1.0.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
     fog-dynect (0.0.3)
       fog-core
       fog-json
@@ -194,22 +186,24 @@ GEM
     fog-ecloud (0.3.0)
       fog-core
       fog-xml
-    fog-google (1.7.1)
+    fog-google (0.1.0)
       fog-core
       fog-json
       fog-xml
-      google-api-client (~> 0.23.0)
     fog-internet-archive (0.0.2)
       fog-core
       fog-json
       fog-xml
+    fog-joyent (0.0.1)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
     fog-local (0.6.0)
       fog-core (>= 1.27, < 3.0)
-    fog-openstack (1.0.11)
-      fog-core (~> 2.1)
+    fog-openstack (0.3.10)
+      fog-core (>= 1.45, <= 2.1.0)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
     fog-ovirt (1.2.5)
@@ -222,10 +216,9 @@ GEM
       fog-core
       fog-json
       fog-xml
-    fog-profitbricks (0.0.5)
-      fog-core
-      fog-xml
-      nokogiri
+    fog-profitbricks (4.1.1)
+      fog-core (~> 1.42)
+      fog-json (~> 1.0)
     fog-rackspace (0.1.6)
       fog-core (>= 1.35)
       fog-json (>= 1.0)
@@ -260,7 +253,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (3.4.0)
+    fog-vsphere (3.5.0)
       fog-core
       rbvmomi (>= 1.9, < 3)
     fog-xenserver (1.0.0)
@@ -273,25 +266,9 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    google-api-client (0.23.9)
-      addressable (~> 2.5, >= 2.5.1)
-      googleauth (>= 0.5, < 0.7.0)
-      httpclient (>= 2.8.1, < 3.0)
-      mime-types (~> 3.0)
-      representable (~> 3.0)
-      retriable (>= 2.0, < 4.0)
-      signet (~> 0.9)
-    googleauth (0.6.7)
-      faraday (~> 0.12)
-      jwt (>= 1.4, < 3.0)
-      memoist (~> 0.16)
-      multi_json (~> 1.11)
-      os (>= 0.9, < 2.0)
-      signet (~> 0.7)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -301,7 +278,6 @@ GEM
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     json (2.3.1)
-    jwt (2.2.2)
     listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -312,7 +288,6 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
-    memoist (0.16.2)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
@@ -324,14 +299,12 @@ GEM
     minitest (5.14.2)
     msgpack (1.3.3)
     multi_json (1.15.0)
-    multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     optimist (3.0.1)
     orm_adapter (0.5.0)
-    os (1.1.1)
     ovirt-engine-sdk (4.4.0)
       json (>= 1, < 3)
     pg (0.18.4)
@@ -382,10 +355,6 @@ GEM
       nokogiri (~> 1.5)
       optimist (~> 3.0)
     regexp_parser (1.8.2)
-    representable (3.0.4)
-      declarative (< 0.1.0)
-      declarative-option (< 0.2.0)
-      uber (< 0.2.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -394,7 +363,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    retriable (3.1.2)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
     rubyzip (2.3.0)
@@ -411,11 +379,6 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    signet (0.14.0)
-      addressable (~> 2.3)
-      faraday (>= 0.17.3, < 2.0)
-      jwt (>= 1.5, < 3.0)
-      multi_json (~> 1.10)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -432,7 +395,6 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
-    uber (0.1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
@@ -471,7 +433,8 @@ DEPENDENCIES
   carrierwave (~> 2.1)
   devise (~> 4.7, >= 4.7.3)
   figaro
-  fog (~> 2.2)
+  fog (~> 1.38)
+  fog-aws (~> 0.7.6)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mini_magick (~> 4.11)
