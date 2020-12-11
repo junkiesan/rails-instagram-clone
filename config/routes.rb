@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Dashoboard
   get '/dashboard' => 'accounts#index'
-  get '/profile/:username' => 'accounts#profile', as: :profile
+  get 'profile/:username' => 'accounts#profile', as: :profile
 
   resources :posts, only: [:new, :create, :show]
 
