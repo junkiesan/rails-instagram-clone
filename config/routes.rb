@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   # Dashoboard
   get '/dashboard' => 'accounts#index'
-  
+  get '/profile/:username' => 'accounts#show'
+
   resources :posts, only: [:new, :create, :show]
 
   root to: "public#homepage"
