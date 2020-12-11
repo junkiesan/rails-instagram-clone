@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use images with AWS account
 gem 'carrierwave', '~> 2.1'
-gem 'fog', '~> 1.38'
+# gem 'fog', '~> 1.38'
 gem 'mini_magick', '~> 4.11'
 gem 'fog-aws', '~> 0.7.6'
 # Reduces boot times through caching; required in config/boot.rb
