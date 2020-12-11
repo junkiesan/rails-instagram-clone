@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
 
   def profile
     #user profile
-    @post = Post.find(params[:id])
+    @posts = @account.posts.active
   end
 
   private
