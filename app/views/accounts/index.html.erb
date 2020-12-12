@@ -12,8 +12,12 @@
         <%= image_tag post.image.url, class: "img img-fluid" %>
 
         <div class="post-details">
-          <p><%= post.account.total_likes %> likes</p>
+          <p><strong><%= post.total_likes %> likes </strong></p>
+          <p><strong><%= link_to post.account.username, profile_path(post.account.username), class: "text-dark"  %></strong></p>
+
           <%= simple_format post.description %>
+
+          <p class="text-muted"> <%= time_ago_in_words post.created_at %> ago</p>
         </div>
       </div>
       <% end %>
