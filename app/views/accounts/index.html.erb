@@ -10,7 +10,9 @@
         </div>
         
         <%= image_tag post.image.url, class: "img img-fluid" %>
+
         <div class="post-details">
+          <p><%= post.account.total_likes %> likes</p>
           <%= simple_format post.description %>
         </div>
       </div>
