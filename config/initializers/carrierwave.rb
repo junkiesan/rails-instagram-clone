@@ -5,9 +5,9 @@ CarrierWave.configure do |config|
     provider:              'AWS',                        # required
     aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],                        # required unless using use_iam_profile
     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],                        # required unless using use_iam_profile
-    use_iam_profile:       true,                         # optional, defaults to false
-    region: 'eu-west-3',
-    path_style: :true
+    # use_iam_profile:       true,                         # optional, defaults to false
+    # region: 'eu-west-3',
+    # path_style: :true
   }
   config.fog_directory  = ENV['FOG_DIRECTORY']                                     # required
   # config.storage = :fog

@@ -35,6 +35,7 @@ gem 'carrierwave', '~> 2.1'
 # gem 'fog', '~> 1.38'
 gem 'mini_magick', '~> 4.11'
 gem 'fog-aws', '~> 0.7.6'
+gem 'mime-types'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
