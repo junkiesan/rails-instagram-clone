@@ -10,7 +10,13 @@
         
         <%= image_tag post.image.url, class: "img img-fluid" %>
 
+
         <div class="post-details">
+          <div class="post-actions">
+            <i class="fas fa-heart fas-2x post-like"></i>
+            <i class="fas fa-comment fas-2x post-comment"></i>
+          </div>
+
           <p><strong><%= post.total_likes %> likes </strong></p>
           <p><strong><%= link_to post.account.username, profile_path(@post.username), class: "text-dark"  %></strong></p>
 
