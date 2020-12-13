@@ -5,9 +5,9 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.json {
         if @like.save
-          { success: true}
+          { success: true }
         else
-          { success: false}
+          { success: false }
         end
       }
     end
