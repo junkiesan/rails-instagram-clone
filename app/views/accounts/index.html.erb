@@ -24,12 +24,14 @@
     <div class="col-4">
       <div class="account-summary">
         <p>
-        <%= link_to image_tag(post.account.image.thumb.url, class: "img-circle"), profile_path(@post.username) %>
+        <%= link_to image_tag(current_account.image.thumb.url, class: "img-circle"), profile_path(current_account.username) if current_account.image.present? %>
         <strong><%= current_account.username %></strong>
         </p>
         <p><%= current_account.full_name %></p>
       </div>
       <div class="follower-suggestions">
+        <%= link_to 'View All', "#", class: "float-right text-dark"%>
+        <p class="tex-muted">Suggestions for you</p>
       </div>
     </div>
   </div>
