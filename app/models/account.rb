@@ -7,6 +7,7 @@ class Account < ApplicationRecord
          
   has_many :posts
   has_many :likes
+  has_one_attached :image
 
   def full_name
     "#{first_name} #{last_name}"
