@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
 
   def follow_account
     account_id = params[:follow_id]
+    Follower.create(follower: current_account.id, following: follower_id)
   end
 
   private
