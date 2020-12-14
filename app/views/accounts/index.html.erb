@@ -17,8 +17,8 @@
             <i class="fas fa-comment fas-2x post-comment"></i>
           </div>
 
-          <p><strong><%= post.total_likes_count %> likes </strong></p>
-          <p><strong><%= link_to post.account.username, profile_path(@post.username), class: "text-dark"  %></strong></p>
+          <p><strong id="post-<%= post.id %>-likes"><%= post.total_likes_count %> likes </strong></p>
+          <p><strong id="post-<%= post.id %>-comments"><%= link_to post.account.username, profile_path(@post.username), class: "text-dark"  %></strong></p>
 
           <%= simple_format post.description %>
 
@@ -38,6 +38,7 @@
       <div class="follower-suggestions">
         <%= link_to 'View All', "#", class: "float-right text-dark"%>
         <p class="tex-muted">Suggestions for you</p>
+        <%= render "accounts/follower_suggestions" %>
       </div>
     </div>
   </div>
