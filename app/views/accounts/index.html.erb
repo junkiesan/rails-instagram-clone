@@ -4,7 +4,7 @@
       <% @posts.each do |post| %>
       <div class="insta-post">
         <div class="post-meta">
-          <%= link_to image_tag(post.account.image.thumb.url, class: "img-circle"), profile_path(post.account.username) %>
+          <%= link_to cl_image_tag(post.account.image, class: "img-circle"), profile_path(post.account.username) %>
           <%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %>
         </div>
         
@@ -18,7 +18,7 @@
           </div>
 
           <p><strong id="post-<%= post.id %>-likes"><%= post.total_likes_count %> likes </strong></p>
-          <p><strong id="post-<%= post.id %>-comments"><%= link_to post.account.username, profile_path(@post.username), class: "text-dark"  %></strong></p>
+          <p><strong id="post-<%= post.id %>-comments"><%= link_to post.account.username, profile_path(post.account.username), class: "text-dark"  %></strong></p>
 
           <%= simple_format post.description %>
 
