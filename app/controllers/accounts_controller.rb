@@ -8,7 +8,6 @@ class AccountsController < ApplicationController
     following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
     following_ids << current_account.id
     
-    @post = current_account
     @follower_suggestions = Account.where.not(id: current_account.id)
   end
 
@@ -18,7 +17,7 @@ class AccountsController < ApplicationController
   end
 
   def follow_account
-    account_id = params[:follow_id]
+    follower_id = params[:follow_id]
     if Follower.create(follower_id: current_account.id, following_id: follower_id)
       flash[:success] = "Now following user"
     else
