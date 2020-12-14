@@ -1,10 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_account!
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
   def new
     @post = Post.new
   end
@@ -18,6 +14,12 @@ class PostsController < ApplicationController
       redirect_to new_post_path, flash: { danger: "Post wasn't saved!"}
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+
 
 
   private
