@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
     #user feed
     @posts = Post.active
 
-    following_ids = Follow.where(follower_id: current_account.id).map(&:following_id)
+    following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
     following_ids << current_account.id
     
     @post = current_account
