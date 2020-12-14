@@ -4,6 +4,10 @@ class AccountsController < ApplicationController
   def index
     #user feed
     @posts = Post.active
+
+    following_ids = Follow.where(follower_id: current_account.id).map(&:following_id)
+    following_ids << current_account.id
+    
     @post = current_account
     @follower_suggestions = Account.where.not(id: current_account.id)
   end
