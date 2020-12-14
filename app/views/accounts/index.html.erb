@@ -17,7 +17,7 @@
             <i class="fas fa-comment fas-2x post-comment"></i>
           </div>
 
-          <p><strong><%= post.total_likes %> likes </strong></p>
+          <p><strong><%= post.total_likes_count %> likes </strong></p>
           <p><strong><%= link_to post.account.username, profile_path(@post.username), class: "text-dark"  %></strong></p>
 
           <%= simple_format post.description %>
