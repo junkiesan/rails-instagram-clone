@@ -2,5 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .navbar {
+  padding: 14px 16px !important;
   margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
