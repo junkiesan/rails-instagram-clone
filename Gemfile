@@ -13,6 +13,8 @@ gem 'pg', '~> 0.18.4'
 gem 'puma', '~> 4.1'
 # Auth
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'omniauth-facebook'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'bootstrap-sass', '~> 3.4.1'
