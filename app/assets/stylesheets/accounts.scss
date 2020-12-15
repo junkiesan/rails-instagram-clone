@@ -30,3 +30,12 @@ body {
 .profile-posts {
   margin-top: 50px;
 }
+
+.btn-custom {
+  background: transparent;
+  border: 2px solid #ddd !important;
+  border-radius: 4px !important; 
+    &:hover {
+      background: #ddd !important;
+    }
+}
