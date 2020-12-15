@@ -31,6 +31,7 @@
       <div class="comment-box">
         <%= form_for @comment do |f| %>
           <%= f.hidden_field_tag :post_id, value: @post.id %>
+          <%= f.hidden_field_tag :return_to, value: "post" %>
           <div class="input-group">
             <%= f.text_field :comment, placeholder: "Add comment here...", class: "form-control post-comment" %>
           </div>
