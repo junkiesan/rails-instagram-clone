@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Account.destroy_all
-Post.destroy_all
+# Account.destroy_all
+# Post.destroy_all
 p 'data destroyed'
 Account.create([
   { username: "jujulien", first_name: "Julien", last_name: "Bouland", email: "lol@example.com", password: "123456" },
