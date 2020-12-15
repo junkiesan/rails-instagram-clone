@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container post-details">
   <div class="row">
     <div class="col-8">
       <div class="insta-post">
@@ -14,7 +14,11 @@
 
       
       <div class="post-details">
-        <%= simple_format @post.description %>
+
+        <div class="comments-feed">
+          <%= simple_format @post.description %>
+          <%= render "posts/comments", post: @post%>
+        </div>
 
         <div class="post-actions">
           <i class="fas fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id) %> fas-2x post-like" data-id="<%= post.id %>"></i>
@@ -26,10 +30,6 @@
 
 
         <p class="text-muted"> <%= time_ago_in_words @post.created_at %> ago</p>
-        
-        <div class="comments-feed">
-          <%= render "posts/comments", post: @post%>
-        </div>
       </div>
       <div class="comment-box">
         <%= form_for @comment do |f| %>
