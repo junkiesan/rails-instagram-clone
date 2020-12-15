@@ -23,6 +23,8 @@
           <%= simple_format post.description %>
 
           <p class="text-muted"> <%= time_ago_in_words post.created_at %> ago</p>
+
+          <%= render "posts/comments" %>
         </div>
         <div class="comment-box">
           <%= form_for @comment do |f| %>
