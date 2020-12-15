@@ -1,2 +1,43 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="insta-post">
+        <%= cl_image_tag @post.image.url, class: "img img-fluid" if @post.image.present? %>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <div class="post-meta">
+        <%= link_to cl_image_tag(@post.account.image, class: "img-circle"), profile_path(@post.account.username) %>
+        <%= link_to @post.account.username, profile_path(@post.account.username), class: "text-dark" %>
+      </div>
+
+      <div class="post-details">
+        <div class="post-actions">
+          <i class="fas fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id) %> fas-2x post-like" data-id="<%= post.id %>"></i>
+          <i class="fas fa-comment fas-2x post-comment"></i>
+        </div>
+
+        <p><strong id="post-<%= post.id %>-likes"><%= @post.total_likes_count %> likes </strong></p>
+        <p><strong id="post-<%= post.id %>-comments"><%= link_to @post.account.username, profile_path(@post.account.username), class: "text-dark"  %></strong></p>
+
+        <%= simple_format @post.description %>
+
+        <p class="text-muted"> <%= time_ago_in_words @post.created_at %> ago</p>
+
+        <%= render "posts/comments", post: @post%>
+      </div>
+      <div class="comment-box">
+        <%= form_for @comment do |f| %>
+          <%= f.hidden_field_tag :post_id, value: @post.id %>
+          <div class="input-group">
+            <%= f.text_field :comment, placeholder: "Add comment here...", class: "form-control post-comment" %>
+          </div>
+          <div class="input-group-append">
+            <%= f.submit_tag "Post", class: "btn btn-success float-right" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
