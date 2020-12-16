@@ -3,13 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .insta-post {
   margin-bottom: 15px;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
 }
 
+.post-image {
+  width: 100%;
+  height: 100%;
+}
 .post-meta {
   background: #fff;
   text-align: left;
