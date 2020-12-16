@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .navbar {
   padding: 14px 16px !important;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.m-r-40 {
+  margin-right: 50% !important;
+}
+
+.nav-item:not(:last-child) {
+  // margin-right: 10%;
+}
+.nav-item {
+  font-size: 16px;
 }
