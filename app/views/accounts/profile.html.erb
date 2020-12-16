@@ -31,7 +31,7 @@
   <div class="row profile-posts">
     <% @posts.each do |post| %>
       <div class="col-4">
-        <div class="insta-post post-square" style="background-image: url('<%= cl_image_path(post.image) %>')">
+        <div class="show-insta-post post-square" style="background-image: url('<%= cl_image_path(post.image) %>')">
           <%= link_to post_path(post) do%>
             <div class="post-stats">
               <div class="inner">

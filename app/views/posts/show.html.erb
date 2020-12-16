@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="post-meta">
+      <div class="show-post-meta">
         <%= link_to cl_image_tag(@post.account.image, class: "img-circle"), profile_path(@post.account.username) %>
         <%= link_to @post.account.username, profile_path(@post.account.username), class: "text-dark" %>
       </div>
