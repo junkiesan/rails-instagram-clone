@@ -9,7 +9,7 @@
           <%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %>
         </div>
         
-        <%= image_tag post.image.url, class: "img img-fluid post-image" %>
+        <%= cl_image_tag post.image.url, class: "img img-fluid post-image" %>
 
 
         <div class="post-details">
