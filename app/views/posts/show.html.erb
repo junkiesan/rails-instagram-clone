@@ -18,8 +18,8 @@
         </div>
 
         <div class="post-actions">
-          <i class="fas fa-heart like-<%= @post.id %> <%= 'active' if post_liked_by_user?(@post.id) %> fas-2x post-like" data-id="<%= @post.id %>"></i>
-          <i class="fas fa-comment fas-2x post-comment" id="post-comment"></i>
+          <i class="fas fa-lg fa-heart like-<%= @post.id %> <%= 'active' if post_liked_by_user?(@post.id) %> fas-2x post-like" data-id="<%= @post.id %>"></i>
+          <i class="fas fa-lg	fa-comment fas-2x post-comment" id="post-comment"></i>
         </div>
 
         <p><strong id="post-<%= @post.id %>-likes"><%= @post.total_likes_count %> likes </strong></p>
